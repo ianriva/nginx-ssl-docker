@@ -33,10 +33,7 @@ services:
       - "80"
     volumes:
       - ./www:/usr/share/nginx/html:ro
-    environment:
-      - VIRTUAL_HOST=iantest1.duckdns.org,www.iantest1.duckdns.org
-      - LETSENCRYPT_HOST=iantest1.duckdns.org,www.iantest1.duckdns.org
-      - LETSENCRYPT_EMAIL=ianriva96.ir@gmail.com
+    env_file: ./.env
     depends_on:
       - nginx-proxy
       - letsencrypt
